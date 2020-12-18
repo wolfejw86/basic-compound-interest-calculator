@@ -1,7 +1,6 @@
 {
   "name": "compound-interest",
   "version": "0.1.0",
-  "private": true,
   "homepage": "http://wolfejw86.github.io/basic-compound-interest-calculator",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
