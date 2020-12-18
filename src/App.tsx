@@ -17,7 +17,7 @@ function calcGrowth(
     start =
       yrlyAdd +
       start * Math.pow(1 + growthRate / 100 / compoundRate, compoundRate);
-    y.push(start);
+    y.push(Number(start.toFixed(2)));
   }
   return { x, y };
 }
@@ -126,7 +126,7 @@ function App() {
         </table>
         <Plot
           data={plotData}
-          layout={{ width: 800, height: 600, title: "Growth Over Time",yaxis: {title: { text: 'Total $$$'}}, xaxis: {title: { text: 'Years Of Growth'}} }}
+          layout={{ width: 800, height: 600, title: "Growth Over Time",yaxis: {tickprefix: '$',title: { text: 'Total $$$'}}, xaxis: {title: { text: 'Years Of Growth'}} }}
         />
       </div>
     </div>
