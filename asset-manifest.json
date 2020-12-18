@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/basic-compound-interest-calculator/static/css/main.4e9a8946.chunk.css",
-    "main.js": "/basic-compound-interest-calculator/static/js/main.941a96e8.chunk.js",
-    "main.js.map": "/basic-compound-interest-calculator/static/js/main.941a96e8.chunk.js.map",
+    "main.js": "/basic-compound-interest-calculator/static/js/main.0c42a133.chunk.js",
+    "main.js.map": "/basic-compound-interest-calculator/static/js/main.0c42a133.chunk.js.map",
     "runtime-main.js": "/basic-compound-interest-calculator/static/js/runtime-main.c49a60ff.js",
     "runtime-main.js.map": "/basic-compound-interest-calculator/static/js/runtime-main.c49a60ff.js.map",
     "static/js/2.966a056b.chunk.js": "/basic-compound-interest-calculator/static/js/2.966a056b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c49a60ff.js",
     "static/js/2.966a056b.chunk.js",
     "static/css/main.4e9a8946.chunk.css",
-    "static/js/main.941a96e8.chunk.js"
+    "static/js/main.0c42a133.chunk.js"
   ]
 }
