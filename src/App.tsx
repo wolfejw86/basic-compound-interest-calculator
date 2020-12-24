@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="input-container">
+      <div className="input-container" title="balance to begin compounding with">
         <label htmlFor="startingBalance">Starting Balance $</label>
         <input
           type="number"
@@ -97,7 +97,7 @@ function App() {
         />
       </div>
 
-      <div className="input-container">
+      <div className="input-container" title="rate of growth is in whole percentage integers">
         <label htmlFor="growthRate">Rate Of Growth %</label>
         <input
           type="number"
@@ -107,7 +107,7 @@ function App() {
         />
       </div>
 
-      <div className="input-container">
+      <div className="input-container" title="per time ex. 1 means yearly if time is in years">
         <label htmlFor="compoundRate">Compound Rate</label>
         <input
           type="number"
@@ -117,8 +117,8 @@ function App() {
         />
       </div>
 
-      <div className="input-container">
-        <label htmlFor="compoundtime">Compound Time</label>
+      <div className="input-container" title="can be any time, easiest to use years">
+        <label htmlFor="compoundtime">Compound Time </label>
         <input
           type="number"
           name="compoundtime"
@@ -127,8 +127,8 @@ function App() {
         />
       </div>
 
-      <div className="input-container">
-        <label htmlFor="addYrlyContrib">Additional Yearly Contributions</label>
+      <div className="input-container" title="How much you will contribute per time interval - ex. if rate is years, then this would be a yearly contribution">
+        <label htmlFor="addYrlyContrib">Additional Contributions Per Time Interval</label>
         <input
           type="number"
           name="addYrlyContrib"
@@ -139,7 +139,7 @@ function App() {
 
       <div className="output-container">
         <div className="table">
-          <h2>Compounded Balance By Year</h2>
+          <h2>Compounded Balance By Time Interval</h2>
           <table>
             <thead>
               <tr>
