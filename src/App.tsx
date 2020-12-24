@@ -1,6 +1,6 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from "react";
 import "./index.css";
-import Plot from "react-plotly.js";
 
 function calcGrowth(
   ct: number,
@@ -34,7 +34,19 @@ function App() {
 
   const [gainsByYear, setGainsByYear] = useState<number[]>([]);
 
+  const [Plotly, setPlotly] = useState<any>(null);
+
   useEffect(() => {
+    import("react-plotly.js").then(Plot => {
+      setPlotly(Plot);
+    })
+  }, [])
+
+  useEffect(() => {
+    if (!Plotly) {
+      return;
+    }
+
     const a = [];
     let startingBalanceN = Number(startingBalance);
     const growthRateN = Number(growthRate);
@@ -64,7 +76,8 @@ function App() {
     }
     setGainsByYear(a);
     setPlotData([ ...growthRateVariances]);
-  }, [startingBalance, growthRate, compoundRate, compoundtime, addYrlyContrib]);
+  }, [startingBalance, growthRate, compoundRate, compoundtime, addYrlyContrib, Plotly]);
+
   return (
     <div className="App">
       <label htmlFor="">Starting Balance $</label>
@@ -124,10 +137,10 @@ function App() {
             ))}
           </tbody>
         </table>
-        <Plot
+        {Plotly && <Plotly.default
           data={plotData}
           layout={{ width: 800, height: 600, title: "Growth Over Time",yaxis: {tickprefix: '$',title: { text: 'Total $$$'}}, xaxis: {title: { text: 'Years Of Growth'}} }}
-        />
+        />}
       </div>
     </div>
   );
