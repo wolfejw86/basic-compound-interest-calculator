@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 /* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from "react";
 import "./index.css";
@@ -173,7 +174,7 @@ function App() {
               config={{ responsive: true }}
             />
           </div>
-        )}
+        ) || <div className="loading-container"><h2>Loading Chart...</h2><div className="loadingspinner"></div></div>}
       </div>
     </div>
   );
