@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/basic-compound-interest-calculator/static/css/main.8b14a113.chunk.css",
-    "main.js": "/basic-compound-interest-calculator/static/js/main.3c3d06cb.chunk.js",
-    "main.js.map": "/basic-compound-interest-calculator/static/js/main.3c3d06cb.chunk.js.map",
+    "main.css": "/basic-compound-interest-calculator/static/css/main.8fce42b5.chunk.css",
+    "main.js": "/basic-compound-interest-calculator/static/js/main.9b21363e.chunk.js",
+    "main.js.map": "/basic-compound-interest-calculator/static/js/main.9b21363e.chunk.js.map",
     "runtime-main.js": "/basic-compound-interest-calculator/static/js/runtime-main.07712014.js",
     "runtime-main.js.map": "/basic-compound-interest-calculator/static/js/runtime-main.07712014.js.map",
     "static/js/2.004a12f4.chunk.js": "/basic-compound-interest-calculator/static/js/2.004a12f4.chunk.js",
@@ -12,14 +12,14 @@
     "static/js/4.f6d13979.chunk.js": "/basic-compound-interest-calculator/static/js/4.f6d13979.chunk.js",
     "static/js/4.f6d13979.chunk.js.map": "/basic-compound-interest-calculator/static/js/4.f6d13979.chunk.js.map",
     "index.html": "/basic-compound-interest-calculator/index.html",
-    "static/css/main.8b14a113.chunk.css.map": "/basic-compound-interest-calculator/static/css/main.8b14a113.chunk.css.map",
+    "static/css/main.8fce42b5.chunk.css.map": "/basic-compound-interest-calculator/static/css/main.8fce42b5.chunk.css.map",
     "static/js/2.004a12f4.chunk.js.LICENSE.txt": "/basic-compound-interest-calculator/static/js/2.004a12f4.chunk.js.LICENSE.txt",
     "static/js/3.7dcbf308.chunk.js.LICENSE.txt": "/basic-compound-interest-calculator/static/js/3.7dcbf308.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.07712014.js",
     "static/js/2.004a12f4.chunk.js",
-    "static/css/main.8b14a113.chunk.css",
-    "static/js/main.3c3d06cb.chunk.js"
+    "static/css/main.8fce42b5.chunk.css",
+    "static/js/main.9b21363e.chunk.js"
   ]
 }
