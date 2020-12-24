@@ -55,7 +55,7 @@ function App() {
     const compoundtimeN = Number(compoundtime);
     const yrlyContrib = Number(addYrlyContrib);
 
-    const growthRateVariances = [0, 1, 2, -1, -2].map((rateVariance) => ({
+    const growthRateVariances = [-1, -2, 0, 1, 2].map((rateVariance) => ({
       type: "line",
       name: growthRateN + rateVariance + "% Growth",
       ...calcGrowth(
@@ -162,7 +162,7 @@ function App() {
             </tbody>
           </table>
         </div>
-        {Plotly && (
+        {(Plotly && (
           <div className="chartt">
             <Plotly.default
               data={plotData}
@@ -174,7 +174,12 @@ function App() {
               config={{ responsive: true }}
             />
           </div>
-        ) || <div className="loading-container"><h2>Loading Chart...</h2><div className="loadingspinner"></div></div>}
+        )) || (
+          <div className="loading-container">
+            <h2>Loading Chart...</h2>
+            <div className="loadingspinner"></div>
+          </div>
+        )}
       </div>
     </div>
   );
