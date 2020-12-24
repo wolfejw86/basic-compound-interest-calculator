@@ -37,10 +37,10 @@ function App() {
   const [Plotly, setPlotly] = useState<any>(null);
 
   useEffect(() => {
-    import("react-plotly.js").then(Plot => {
+    import("react-plotly.js").then((Plot) => {
       setPlotly(Plot);
-    })
-  }, [])
+    });
+  }, []);
 
   useEffect(() => {
     if (!Plotly) {
@@ -56,7 +56,7 @@ function App() {
 
     const growthRateVariances = [0, 1, 2, -1, -2].map((rateVariance) => ({
       type: "line",
-      name: growthRateN + rateVariance + '% Growth',
+      name: growthRateN + rateVariance + "% Growth",
       ...calcGrowth(
         compoundtimeN,
         startingBalanceN,
@@ -67,7 +67,6 @@ function App() {
     }));
 
     for (let i = 0; i < compoundtimeN; i++) {
-
       startingBalanceN =
         yrlyContrib +
         startingBalanceN *
@@ -75,72 +74,106 @@ function App() {
       a.push(startingBalanceN);
     }
     setGainsByYear(a);
-    setPlotData([ ...growthRateVariances]);
-  }, [startingBalance, growthRate, compoundRate, compoundtime, addYrlyContrib, Plotly]);
+    setPlotData([...growthRateVariances]);
+  }, [
+    startingBalance,
+    growthRate,
+    compoundRate,
+    compoundtime,
+    addYrlyContrib,
+    Plotly,
+  ]);
 
   return (
     <div className="App">
-      <label htmlFor="">Starting Balance $</label>
-      <input
-        type="number"
-        value={startingBalance}
-        onChange={(e) => setStartingBalance(e.target.value)}
-      />
+      <div className="input-container">
+        <label htmlFor="startingBalance">Starting Balance $</label>
+        <input
+          type="number"
+          name="startingBalance"
+          value={startingBalance}
+          onChange={(e) => setStartingBalance(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="">Rate Of Growth %</label>
-      <input
-        type="number"
-        value={growthRate}
-        onChange={(e) => setgrowthRate(e.target.value)}
-      />
+      <div className="input-container">
+        <label htmlFor="growthRate">Rate Of Growth %</label>
+        <input
+          type="number"
+          name="growthRate"
+          value={growthRate}
+          onChange={(e) => setgrowthRate(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="">Compound Rate</label>
-      <input
-        type="number"
-        value={compoundRate}
-        onChange={(e) => setCompoundRate(e.target.value)}
-      />
+      <div className="input-container">
+        <label htmlFor="compoundRate">Compound Rate</label>
+        <input
+          type="number"
+          name="compoundRate"
+          value={compoundRate}
+          onChange={(e) => setCompoundRate(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="">Compound Time</label>
-      <input
-        type="number"
-        value={compoundtime}
-        onChange={(e) => setCompoundTime(e.target.value)}
-      />
+      <div className="input-container">
+        <label htmlFor="compoundtime">Compound Time</label>
+        <input
+          type="number"
+          name="compoundtime"
+          value={compoundtime}
+          onChange={(e) => setCompoundTime(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="">Additional Yearly Contributions</label>
-      <input
-        type="number"
-        value={addYrlyContrib}
-        onChange={(e) => setAdditionalYrlyContrib(e.target.value)}
-      />
+      <div className="input-container">
+        <label htmlFor="addYrlyContrib">Additional Yearly Contributions</label>
+        <input
+          type="number"
+          name="addYrlyContrib"
+          value={addYrlyContrib}
+          onChange={(e) => setAdditionalYrlyContrib(e.target.value)}
+        />
+      </div>
 
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <table>
-          <thead>
-            <tr>
-              <td>Year</td>
-              <td>Amount</td>
-            </tr>
-          </thead>
-          <tbody>
-            {gainsByYear.map((g, j) => (
-              <tr key={j}>
-                <td>{j + 1}</td>
-                <td>
-                  $
-                  {g.toLocaleString().includes(".")
-                    ? g.toLocaleString()
-                    : g.toLocaleString() + ".00"}
-                </td>
+      <div className="output-container">
+        <div className="table">
+          <h2>Compounded Balance By Year</h2>
+          <table>
+            <thead>
+              <tr>
+                <td>Year</td>
+                <td>Amount</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        {Plotly && <Plotly.default
-          data={plotData}
-          layout={{ width: 800, height: 600, title: "Growth Over Time",yaxis: {tickprefix: '$',title: { text: 'Total $$$'}}, xaxis: {title: { text: 'Years Of Growth'}} }}
-        />}
+            </thead>
+            <tbody>
+              {gainsByYear.map((g, j) => (
+                <tr key={j}>
+                  <td>{j + 1}</td>
+                  <td>
+                    $
+                    {g.toLocaleString().includes(".")
+                      ? g.toLocaleString()
+                      : g.toLocaleString() + ".00"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {Plotly && (
+          <div className="chartt">
+            <Plotly.default
+              data={plotData}
+              layout={{
+                title: "Growth Over Time",
+                yaxis: { tickprefix: "$", title: { text: "Total $$$" } },
+                xaxis: { title: { text: "Years Of Growth" } },
+              }}
+              config={{ responsive: true }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

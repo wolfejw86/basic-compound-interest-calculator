@@ -19,3 +19,29 @@ code {
 table {
   max-height: none !important;
 }
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+label {
+  width: 200px;
+}
+input {
+  width: 150px;
+}
+.output-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chartt {
+  height: 600px;
+}
+
+@media only screen and (max-width: 500px) {
+  .output-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
